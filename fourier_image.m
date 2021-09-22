@@ -24,5 +24,5 @@ A=abs(L);
 figure();
 imagesc(A);
 axis image;
-title("Magnitude of Gray Scale image");
+title("Magnitude of FFT image");
 
