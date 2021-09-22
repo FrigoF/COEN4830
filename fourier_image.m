@@ -22,6 +22,7 @@ S=fftshift(F);
 L=log2(S);
 A=abs(L);
 figure();
-imagesc(A)
+imagesc(A);
+axis image;
 title("Magnitude of Gray Scale image");
 
