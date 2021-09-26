@@ -1,5 +1,7 @@
 // cube_spin.cpp
 //
+// https://people.sc.fsu.edu/~jburkardt/cpp_src/rotating_cube_display_opengl/rotating_cube_display_opengl.html
+//
 // $ cc cube_spin.cpp -o cube_spin -lglut -lGLU -lGL -lstdc++
 //
 
