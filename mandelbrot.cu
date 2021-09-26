@@ -3,6 +3,8 @@
 //  See:
 // http://selkie.macalester.edu/csinparallel/modules/CUDAArchitecture/build/html/1-Mandelbrot/Mandelbrot.html
 //
+// To compile:
+// $ nvcc mandelbrot.cu -g -D SHOW_X -o mandelbrot -lX11 -lgomp -lm
 //
 
 #include <stdio.h>
