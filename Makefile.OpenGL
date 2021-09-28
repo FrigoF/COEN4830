@@ -1,0 +1,11 @@
+CC 		= cc 
+CFLAGS 		= -Wall -g
+LFLAGS 		= -lglut -lGLU -lGL
+
+OpenGL : OpenGL.cpp
+	$(CC) $(CFLAGS) OpenGL.cpp -o OpenGL $(LFLAGS)
+
+all : OpenGL
+
+clean :
+	rm -rf *.o OpenGL
