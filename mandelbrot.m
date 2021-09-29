@@ -5,8 +5,7 @@
 %          linkedin.com/in/crntaylor
 %          30-Dec-2013
 %
-% Use: >> 
-
+% Use: >> mandelbrot(800, 40)
 %         where n = image size, number of iterations = niter
 %
 
