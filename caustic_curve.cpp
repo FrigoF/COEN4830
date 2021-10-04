@@ -2,7 +2,7 @@
 //
 // From  https://people.sc.fsu.edu/~jburkardt/cpp_src/caustic_opengl/caustic_opengl.cpp
 //
-// $ cc caustic_curve.cpp -o curve -lm -lglut -lGLU -lGL -lstdc++`
+// $ cc caustic_curve.cpp -o curve -lm -lglut -lGLU -lGL -lstdc++
 //
 # include <cmath>
 # include <cstdlib>
