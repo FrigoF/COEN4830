@@ -5,7 +5,6 @@
 //
 // See: https://github.com/atomic/OpenGL/blob/master/openGLexamples/fish.cpp 
 // `
-
 #ifdef __APPLE_CC__
 #include <GLUT/glut.h>
 #else
@@ -16,7 +15,6 @@
 
 // A fish bitmap, size is 27x11, but all rows must have a multiple of 8 bits,
 // so we define it like it is 32x11.
-
 GLubyte fish[] = {
   0x00, 0x60, 0x01, 0x00,
   0x00, 0x90, 0x01, 0x00,
@@ -47,10 +45,8 @@ void reshape(int width, int height) {
 
 }
 
-
 // Clears the window then plots 20 fish bitmaps in random colors at random
 // positions.
-
 void display() {
   glClear(GL_COLOR_BUFFER_BIT);
   for (int i = 0; i < 20; i++) {
@@ -58,15 +54,11 @@ void display() {
     glRasterPos3f(randomFloat(), randomFloat(), 0.0);
     glBitmap(27, 11, 0, 0, 0, 0, fish);
   }
-
   glFlush();
 }
 
-
-
 // The usual main() for a GLUT application.
 int main(int argc, char **argv) {
-
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
   glutInitWindowSize(400, 300);
@@ -74,5 +66,4 @@ int main(int argc, char **argv) {
   glutReshapeFunc(reshape);
   glutDisplayFunc(display);
   glutMainLoop();
-
 }
