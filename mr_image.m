@@ -1,14 +1,13 @@
-% mr_image.m - MR image Dicom reader
+% mr_image.m - MR Dicom image reader
 % Marquette University
-% EECE 4510/5510
+% COEN 4830 / EECE 5830
 %
 % Fred J. Frigo
 % Nov 29, 2021
 
 
 % Read DICOM image file to obtain DICOM header info 
-% Enter name of Pfile
-dfile = "";
+% Enter name of DICOM file
 dfile = 'e31s3i11.dcm';
 if(dfile == "")
     [fname, pname] = uigetfile('*.*', 'Select DICOM image File');
