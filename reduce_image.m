@@ -34,7 +34,12 @@ zip_row = row*zip;
 zip_col = col*zip;
 
 if zip < 1 
-    zip_buffer = F(1:row, 1:col);
+    a = row/2 - zip_row/2;
+    b = row/2 + zip_row/2;
+    c = col/2 - zip_col/2;
+    d = col/2 + zip_col/2;
+    reduce_buffer = S(a:b, c:d);
+    zip_buffer = fftshift(reduce_buffer);
     zip_scale = 1;
 else
     zip_buffer = zeros( zip_row, zip_col);
