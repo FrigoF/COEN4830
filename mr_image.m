@@ -8,7 +8,7 @@
 
 % Read DICOM image file to obtain DICOM header info 
 % Enter name of DICOM file
-dfile = 'e31s3i11.dcm';
+dfile = 'e31s360i11.dcm';
 if(dfile == "")
     [fname, pname] = uigetfile('*.*', 'Select DICOM image File');
     dfile = strcat(pname, fname);
