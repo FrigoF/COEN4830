@@ -5,11 +5,19 @@
 %
 % See: https://www.mathworks.com/matlabcentral/
 %      answers/91036-how-do-i-split-a-color-image-into-its-3-rgb-channels
- 
+
 % Read color photo
-rgbImage = imread('IMG_6728.jpg');
+function rgb_image( imfile )
+
+if(nargin == 0)
+    [fname,iname] = uigetfile('*.*', 'Select Image file');
+    imfile = strcat(iname, fname);
+end
+
+% Read color photo
+rgbImage = imread(imfile);  
 figure();
-imshow(im);
+imshow(rgbImage);
 
 % Extract color channels.
 redChannel = rgbImage(:,:,1); % Red channel
