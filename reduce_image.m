@@ -2,9 +2,17 @@
 % Fred J. Frigo, Ph.D.
 % 03-Oct-2023
 %
- 
+
 % Read color photo
-im = imread('picnic.jpg');  
+function reduce_image( imfile )
+
+if(nargin == 0)
+    [fname,iname] = uigetfile('*.*', 'Select Image file');
+    imfile = strcat(iname, fname);
+end
+
+% Read color photo
+im = imread(imfile);   
 figure();
 imshow(im);
 title("Color image");
