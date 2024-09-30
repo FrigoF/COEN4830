@@ -3,9 +3,16 @@
 % Fred J. Frigo, Ph.D.
 % 16-Aug-2021
 %
- 
+
+function gray_scale_image( imfile )
+
+if(nargin == 0)
+    [fname,iname] = uigetfile('*.*', 'Select Image file');
+    imfile = strcat(iname, fname);
+end
+
 % Read color photo
-im = imread('IMG_6728.jpg');
+im = imread(imfile);  
 figure();
 imshow(im);
  
