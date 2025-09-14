@@ -18,7 +18,9 @@ function read_meta_data( image_file )
   title(image_file);
  
   % display meta data
+  warning("off", "all");
   info = imfinfo(image_file);
+  warning("on", "all");
  
   makeModel_string = sprintf('%s %s', info.Make, info.Model);
   date_string = info.DigitalCamera.DateTimeOriginal;
