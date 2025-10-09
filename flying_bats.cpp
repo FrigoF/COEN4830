@@ -4,7 +4,7 @@
 // Fred J. Frigo
 // 03-Oct-2025
 //
-// To compile: cc flying_bats.cpp -lGL -lGLU -lglut -lstdc++ -o flying_bats
+// To compile: cc flying_bats.cpp -lGL -lGLU -lglut -lstdc++ -lm -o flying_bats
 
 #include <GL/glut.h>
 #include <cmath>
