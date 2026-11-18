@@ -109,14 +109,29 @@ void drawCampus() {
     glColor3f(0.30f,0.52f,0.28f); cube(0,-0.25f,0,135,0.5f,55);
     // Sidewalks on both sides of Wisconsin Avenue
     glColor3f(0.58f,0.58f,0.58f); cube(0,0.12f,-10.3f,ROAD_LENGTH,0.22f,3.0f); cube(0,0.12f,10.3f,ROAD_LENGTH,0.22f,3.0f);
-    // Wisconsin Avenue buildings, in the requested left-to-right order:
-    // Marquette Hall, Gesu Church, Cudahy Hall, Raynor Library, Haggerty Hall.
-    // Each has a separate footprint and visible gap; coordinates are illustrative.
-    marquetteHall(-58,-23);
-    gesuChurch(-32,-22);
+    // Wisconsin Avenue sequence from EAST to WEST, as specified:
+    // Gesu Church, Marquette Hall, Cudahy Hall, Raynor Library, Haggerty Hall.
+    // The x-axis is arranged east-to-west in this conceptual scene.
+    gesuChurch(-58,-22);
+    marquetteHall(-32,-23);
     building(-6,-23,13,13,14,0.60f,0.58f,0.52f,"Cudahy Hall"); // 4 stories
-    building(20,-23,16,15,14,0.68f,0.64f,0.58f,"Raynor Library"); // 4 stories
-    building(48,-23,17,15,17.5f,0.62f,0.67f,0.70f,"Haggerty Hall"); // 5 stories
+    // Raynor Library: two distinct four-story buildings with a visible open gap.
+    // A raised enclosed pedestrian bridge connects them at the second level.
+    building(13,-23,12,15,14,0.68f,0.64f,0.58f,"Raynor Library - East");
+    building(35,-23,12,15,14,0.64f,0.61f,0.55f,"Raynor Library - West");
+
+    // Second-level bridge across the gap between the two Raynor buildings.
+    // Its long axis follows the east-west (X) direction.
+    glColor3f(0.48f,0.58f,0.63f);
+    cube(24.0f,6.0f,-23.0f,10.0f,2.8f,4.2f);
+    // Broad glazed bridge windows on the north and south faces.
+    glDisable(GL_LIGHTING);
+    glColor3f(0.24f,0.55f,0.70f);
+    cube(24.0f,6.0f,-20.84f,9.2f,1.65f,0.06f);
+    cube(24.0f,6.0f,-25.16f,9.2f,1.65f,0.06f);
+    glEnable(GL_LIGHTING);
+
+    building(58,-23,17,15,17.5f,0.62f,0.67f,0.70f,"Haggerty Hall"); // 5 stories
     // Center-median trees down Wisconsin Avenue. Keep trees out of the traffic lanes.
     for(float x=-49;x<=49;x+=12) tree(x,0.0f);
     // Street lights are outside the curb lanes, not in the tree median.
