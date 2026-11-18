@@ -9,8 +9,8 @@
 const float ROAD_LENGTH = 115.0f;
 const float ROAD_WIDTH = 18.0f;
 bool running = true;
-float cameraAngle = 90.0f, cameraHeight = 32.0f, cameraDistance = 62.0f;
-const float CAMERA_TARGET_X = -32.0f; // Gesu Church
+float cameraAngle = 55.0f, cameraHeight = 38.0f, cameraDistance = 96.0f;
+const float CAMERA_TARGET_X = -5.0f; // frame the full Wisconsin Avenue building row
 const float CAMERA_TARGET_Z = -22.0f;
 
 struct Car { float x, z, speed; float r,g,b; };
@@ -114,9 +114,9 @@ void drawCampus() {
     // Each has a separate footprint and visible gap; coordinates are illustrative.
     marquetteHall(-58,-23);
     gesuChurch(-32,-22);
-    building(-6,-23,13,13,23,0.60f,0.58f,0.52f,"Cudahy Hall");
-    building(20,-23,16,15,19,0.68f,0.64f,0.58f,"Raynor Library");
-    building(48,-23,17,15,21,0.62f,0.67f,0.70f,"Haggerty Hall");
+    building(-6,-23,13,13,14,0.60f,0.58f,0.52f,"Cudahy Hall"); // 4 stories
+    building(20,-23,16,15,14,0.68f,0.64f,0.58f,"Raynor Library"); // 4 stories
+    building(48,-23,17,15,17.5f,0.62f,0.67f,0.70f,"Haggerty Hall"); // 5 stories
     // Center-median trees down Wisconsin Avenue. Keep trees out of the traffic lanes.
     for(float x=-49;x<=49;x+=12) tree(x,0.0f);
     // Street lights are outside the curb lanes, not in the tree median.
@@ -149,10 +149,10 @@ void keyboard(unsigned char k,int,int) {
     switch(k) { case 'a': case 'A': cameraAngle-=5; break; case 'd': case 'D': cameraAngle+=5; break;
       case 'w': case 'W': cameraHeight+=2; break; case 's': case 'S': cameraHeight-=2; break;
       case '+': case '=': cameraDistance-=3; if(cameraDistance<25) cameraDistance=25; break;
-      case '-': cameraDistance+=3; if(cameraDistance>150) cameraDistance=150; break; case ' ': running=!running; break; case 27: std::exit(0); }
+      case '-': cameraDistance+=3; if(cameraDistance>200) cameraDistance=200; break; case ' ': running=!running; break; case 27: std::exit(0); }
     glutPostRedisplay();
 }
-void reshape(int w,int h) { if(h==0) h=1; glViewport(0,0,w,h); glMatrixMode(GL_PROJECTION); glLoadIdentity(); gluPerspective(55.0,(double)w/h,1.0,250.0); glMatrixMode(GL_MODELVIEW); }
+void reshape(int w,int h) { if(h==0) h=1; glViewport(0,0,w,h); glMatrixMode(GL_PROJECTION); glLoadIdentity(); gluPerspective(55.0,(double)w/h,1.0,350.0); glMatrixMode(GL_MODELVIEW); }
 void init() {
     glEnable(GL_DEPTH_TEST); glEnable(GL_LIGHTING); glEnable(GL_LIGHT0); glEnable(GL_COLOR_MATERIAL); glColorMaterial(GL_FRONT_AND_BACK,GL_AMBIENT_AND_DIFFUSE);
     GLfloat pos[]={-30.0f,70.0f,45.0f,1.0f}, ambient[]={0.35f,0.35f,0.35f,1.0f}, diffuse[]={0.85f,0.85f,0.85f,1.0f};
